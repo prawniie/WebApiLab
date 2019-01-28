@@ -12,9 +12,9 @@ namespace WebApiLab.Controllers
     public class WebApi2Controller : Controller
     {
         [HttpGet("HelloWorld")]
-        public string HelloWorld()
+        public IActionResult HelloWorld()
         {
-            return "Hello world";
+            return Ok("Hello world");
         }
 
         [HttpGet("PrintDayOfWeek")]
@@ -24,7 +24,10 @@ namespace WebApiLab.Controllers
             string weekDay = dateValue.ToString("dddd",
                               new CultureInfo("sv-SE"));
 
-            return Ok($"Idag är det {weekDay}");
+            DateTime dateValue2 = new DateTime(2009, 01, 28);
+            string weekDayTenYearsAgo = dateValue2.ToString("dddd", new CultureInfo("sv-SE"));
+
+            return Ok($"Idag är det {weekDay} - För tio år sedan exakt var det {weekDayTenYearsAgo}");
         }
 
         [HttpGet("PrintPhraseOfTheDay")]
