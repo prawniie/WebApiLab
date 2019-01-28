@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>webapi1</title>
+</head>
+<body>
+    <h3>Post formulär till AddPlanet</h3>
+
+    <form method="post" action="/webapi1/AddPlanet">
+        Planet: <input name="Planet" />
+        Storlek: <input name="Size"/>
+        <button>Ok</button>
+    </form>
+
+    <h3>Sök formulär till planeterna</h3>
+    <form method="get" action="webapi1/GetPlanet">
+        Planet: <input name="Planet" />
+        Storlek: <input name="Size" />
+        <button>Ok</button>
+    </form>
+</body>
+</html>
