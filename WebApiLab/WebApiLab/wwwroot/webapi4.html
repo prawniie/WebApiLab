@@ -2,6 +2,16 @@
 <html>
 <head>
     <title>webapi4</title>
+
+    <style>
+        #placeForLamp {
+            padding: 20px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: grey;
+        }
+    </style>
 </head>
 <body>
     <h3>Dela choklad</h3>
@@ -25,5 +35,41 @@
         <input name="userName"/>
         <button>Ok</button>
     </form>
+
+    <hr />
+
+    <form>
+        <label>Tänd lampa med Javascript</label>
+    <input name="lightIsOn" type="checkbox" onclick="toggleLight()"/>
+    </form>
+
+    <div id="placeForLamp">
+    </div>
+
+    <hr />
+
+    <h3>Tänd lampa med C#</h3>
+    <form method="get" action="webapi4/TurnLightOn">
+        <input name="lightIsOn" type="checkbox" value="true" /> <!--Genom att sätta value till true skickas det in till metoden om man har kryssat i rutan, 
+                                                                annars skickas inget och då blir det per default släckt-->
+        <button>Tänd lampa</button>
+    </form>
+
+    <script>
+
+        let lightIsOn = true;
+        let placeForLamp = document.getElementById("placeForLamp");
+
+        function toggleLight() {
+
+            lightIsOn = !lightIsOn;
+            if (lightIsOn) {
+                placeForLamp.style.backgroundColor = 'gray';
+            }
+            else {
+                placeForLamp.style.backgroundColor = 'yellow';
+            }
+        }
+    </script>
 </body>
 </html>

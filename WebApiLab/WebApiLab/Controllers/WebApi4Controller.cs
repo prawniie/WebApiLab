@@ -49,7 +49,7 @@ namespace WebApiLab.Controllers
             }
 
             order = order.Trim();
-            string pattern = @"^[a-zåäö][a-zåäö]-[1-9]\d\d\d$";
+            string pattern = @"^[a-zåäö][a-zåäö]-[1-9]\d\d\d$"; //parenteser gör att det blir grupper
 
             if (!Regex.IsMatch(order, pattern, RegexOptions.IgnoreCase))
             {
@@ -57,7 +57,7 @@ namespace WebApiLab.Controllers
 
             }
 
-            int numbersInOrder = int.Parse(order.Remove(0, 3));
+            int numbersInOrder = int.Parse(order.Remove(0, 3)); //skapa en nummerdel istället
 
             if(numbersInOrder > 3000)
             {
@@ -92,6 +92,25 @@ namespace WebApiLab.Controllers
             }
 
             string html = $"<html><body><img src={imgUrl}></body></html>";
+
+            return Content(html, "text/html");
+        }
+
+        [HttpGet("TurnLightOn")]
+        public IActionResult TurnLightOn(bool lightIsOn)
+        {
+            //Visa en gul sida om checkboxen är ifylld och knappen trycks ner. Annars en grå. Lös detta med javascript.
+
+            string html = "";
+
+            if(lightIsOn == true)
+            {
+             html = $"<html><body style='background-color: yellow'></body></html>";
+            }
+            else if (lightIsOn == false)
+            {
+                html = $"<html><body style='background-color: gray'></body></html>";
+            }
 
             return Content(html, "text / html");
         }
