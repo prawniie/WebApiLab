@@ -8,11 +8,12 @@ using WebApiLab.Models;
 
 namespace WebApiLab.Controllers
 {
-    [Route("webapi6")]
+    //[Route("webapi6")]
 
     public class WebApi6Controller : Controller
     {
-            [HttpPost("AddDocument")]
+        // webapi6/AddDocuemnt
+            [Route("webapi6/AddDocument"), HttpPost]
             public IActionResult AddDocument(Document document)
             {
                 return Ok(document);
