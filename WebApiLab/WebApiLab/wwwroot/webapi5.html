@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>webapi5</title>
+</head>
+<body>
+
+    <h3>Första formuläret - utan validering</h3>
+    <form method="get" action="webapi5/addperson">
+        Förnamn: <input name="Name" type="text" />
+        Ålder: <input name="Age" type="text" />
+        <button>Ok</button>
+    </form>
+
+    <h3>Andra formuläret - med validering</h3>
+    <form method="get" action="webapi5/addpersonvalidate">
+        Förnamn: <input name="Name" type="text" />
+        Ålder: <input name="Age" type="text" />
+        <button>Ok</button>
+    </form>
+
+    <h3>Tredje formuläret - med validering mha attribut</h3>
+    <form method="get" action="webapi5/addpersonvalidateattribute">
+        Förnamn: <input name="Name" type="text" />
+        Ålder: <input name="Age" type="text" />
+        <button>Ok</button>
+    </form>
+
+</body>
+</html>

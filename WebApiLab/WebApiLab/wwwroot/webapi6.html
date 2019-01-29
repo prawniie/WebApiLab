@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>webapi6</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="form-group">
+        <form method="post" action="webapi6/adddocument">
+            Titel:<br /> <input name="Title" /><br />
+
+            Antal sidor: <br /><input name="NumberOfPages" /><br />
+
+            Sammanfattning finns: <br /><input name="HasSummary" type="checkbox" value="true" /><br />
+
+            Publiceras:<br /> <input name="PublishedFrom" type="datetime-local" /><br />
+
+            Pris: <br /><input name="Price" /><br />
+
+            Typ:
+            <select name="Type" class="form-control">
+                <option name="Type">PDF</option>
+                <option name="Type">Word</option>
+                <option name="Type">Excel</option>
+            </select>
+
+            Taggar:
+            <select name="TagList" multiple class="form-control">
+                <option name="Type">Genombrott</option>
+                <option name="Type">Forskning</option>
+                <option name="Type">Kultur</option>
+            </select>
+
+            Betyg:<br />
+            (1)<input name="Rating" type="radio" value="1" />
+            (2)<input name="Rating" type="radio" value="2" />
+            (3)<input name="Rating" type="radio" value="3" />
+            (4)<input name="Rating" type="radio" value="4" />
+            (5)<input name="Rating" type="radio" value="5" />
+
+            <br />
+            <br />
+            <button>Ok</button>
+        </form>
+
+        <!--Fixa så att publishedfrom anger tid med
+
+        Fixa så att data sparas för
+        hasSummary
+        -->
+
+        <script>
+
+        </script>
+
+    </div>
+</body>
+</html>
