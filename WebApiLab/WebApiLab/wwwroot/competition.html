@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>competition</title>
+    <link rel="shortcut icon" href="icons8-google-48.png">
+</head>
+<body>
+
+    <input id="name" oninput="fillTextBox()" />
+    <br /><br />
+    <input id="nameInTextBox1" />
+    <br /><br />
+    <input id="nameInTextBox2" />
+    <br /><br />
+    <input id="nameInTextBox3" />
+    <br /><br />
+    <input id="nameInTextBox4" />
+    <br /><br />
+
+    <hr />
+
+    <br />
+    <input id="name2" oninput="fillTextBox2()" />
+    <br /><br />
+    <input id="name2InTextBox1" />
+    <br /><br />
+    <input id="name2InTextBox2" />
+    <br /><br />
+    <input id="name2InTextBox3" />
+    <br /><br />
+    <input id="name2InTextBox4" />
+    <br /><br />
+
+    <hr />
+
+    <br />
+    <div id="inputs">
+
+    </div>
+
+
+    <script>
+
+        let inputs = document.getElementById("inputs");
+
+        for (var i = 0; i < 3; i++) {
+            let input = document.createElement("input");
+            input.setAttribute("id", `textBox${i}`);
+            input.style.display = 'block';
+            input.style.marginBottom = '10px';
+            inputs.appendChild(input);
+        }
+
+        function fillTextBox() {
+            let name = document.getElementById("name").value;
+
+            let textBox1 = document.getElementById("nameInTextBox1");
+            let textBox2 = document.getElementById("nameInTextBox2");
+            let textBox3 = document.getElementById("nameInTextBox3");
+            let textBox4 = document.getElementById("nameInTextBox4");
+
+            textBox1.value = name;
+            textBox2.value = name;
+            textBox3.value = reverseName(name);
+            textBox4.value = name;
+
+        }
+
+        function reverseName(name) {
+            let nameArray = name.split("");
+            let reversedNameArray = nameArray.reverse();
+
+            let reversedName = reversedNameArray.join("");
+            return reversedName;
+        }
+
+        function fillTextBox2() {
+            let name = document.getElementById("name2").value;
+
+            let textBox1 = document.getElementById("name2InTextBox1");
+            let textBox2 = document.getElementById("name2InTextBox2");
+            let textBox3 = document.getElementById("name2InTextBox3");
+            let textBox4 = document.getElementById("name2InTextBox4");
+
+            textBox1.value = name;
+            textBox2.value = name;
+            textBox3.value = reverseName(name);
+            textBox4.value = name;
+
+        }
+
+    </script>
+
+</body>
+</html>
